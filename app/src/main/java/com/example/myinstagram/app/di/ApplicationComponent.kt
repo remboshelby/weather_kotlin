@@ -3,6 +3,7 @@ package com.example.myinstagram.app.di
 import android.app.Application
 import android.content.Context
 import com.example.common.di.CommonComponent
+import com.example.common.di.ServerUrl
 import com.example.common.di.modules.NetworkModule
 import com.example.common.di.modules.RepositoryModule
 import com.example.common.di.modules.SharedPreferenceModule
@@ -20,6 +21,9 @@ interface ApplicationComponent : CommonComponent {
 
         @BindsInstance
         fun context (context: Context) : Builder
+
+        @BindsInstance
+        fun serverUrl(@ServerUrl serverUrl: String) : Builder
 
         fun build() :ApplicationComponent
     }
